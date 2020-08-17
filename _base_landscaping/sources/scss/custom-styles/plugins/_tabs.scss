@@ -1,0 +1,365 @@
+/*
+*
+* Tabs
+* --------------------------------------------------
+*/
+
+
+//== Tabs variables
+//
+//##
+
+// Base
+$tabs-color: $white;
+$tabs-background: $primary;
+$tabs-active-background: $gray;
+$tabs-font: 400 12px/21px $font-family-sec;
+$tabs-padding: 4px 8px;
+
+// Horizontal tabs
+$tabs-horizontal-active-color: $primary;
+$tabs-horizontal-active-background: transparent;
+$tabs-horizontal-background: transparent;
+
+// Vertical tabs
+$tabs-vertical-active-color: $primary;
+$tabs-vertical-active-background: transparent;
+$tabs-vertical-background: transparent;
+
+
+// Base styles
+//--------------------------------------
+
+.tabs-custom {
+  .nav-custom {
+    &> li, &> li > a {
+      position: relative;
+    }
+
+    @media (max-width: $screen-xxs-max) {
+
+      &> li {
+        width: 100%;
+      }
+    }
+  }
+
+  .nav-custom-tabs {
+    font-size: 0;
+    line-height: 0;
+  }
+}
+
+.tabs-custom {
+  .nav-custom-tabs {
+    li a {
+      position: relative;
+      padding: $tabs-padding;
+      min-width: auto;
+      font: $tabs-font;
+      color: $tabs-color;
+      background: $tabs-background;
+      border: 1px solid $primary;
+      text-align: center;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      vertical-align: middle;
+      transition: .3s all ease-in-out;
+      z-index: 1;
+      
+      &:after {
+        border-color: $primary;
+        background: $primary;
+      }
+    }
+
+    li a:hover,
+    li.active a {
+      color: $tabs-horizontal-active-color;
+      background: $tabs-horizontal-active-background;
+      border-color: $tabs-horizontal-active-color;
+
+      &:after {
+        background: $white;
+      }
+
+      &:before {
+        transform: translate(0);
+      }
+    }
+  }
+}
+
+.tab-content {
+  padding-top: 20px;
+
+  @media (min-width: $screen-sm-min) {
+    padding-top: 25px;
+  }
+}
+
+.tabs-custom.tabs-vertical .nav-custom-tabs li a,
+.tabs-custom.tabs-horizontal .nav-custom-tabs li a {
+  @extend %button-decor;
+}
+
+html {
+  .tabs-custom.tabs-vertical .nav-custom-tabs li a,
+  .tabs-custom.tabs-horizontal .nav-custom-tabs li a {
+
+    @media (max-width: $screen-sm-max) {
+      margin: 0;
+    }
+  }
+}
+
+// Horizontal tabs
+//--------------------------------------
+
+.tabs-custom {
+  &.tabs-horizontal {
+
+    @media (max-width: $screen-sm-max) {
+      .nav-custom-tabs {
+
+        li a {
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @media (min-width: $screen-sm-min) {
+
+      .nav-custom-tabs {
+        @include display-flex;
+        @include justify-content(flex-start);
+        position: relative;
+
+        li { width: auto; }
+
+        li a {
+          display: block;
+          padding: 5px 5px 5px 10px;
+          background: $tabs-horizontal-background;
+        }
+
+        li a:hover,
+        li.active a {
+          color: $tabs-horizontal-active-color;
+          background: $tabs-horizontal-active-background;
+          border-color: $tabs-horizontal-active-color;
+          
+          &:after {
+            background: $white;
+          }
+          
+          &:before {
+            transform: translate(0);
+          }
+        }
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+
+      .nav-custom-tabs {
+        li a {
+          font-size: 14px;
+          line-height: 29px;
+          padding: 9px 10px 9px 30px;
+          min-width: 137px;
+        }
+      }
+    }
+  }
+}
+
+
+// Vertical tabs
+//--------------------------------------
+
+.tabs-custom {
+  &.tabs-vertical {
+    @media (min-width: $screen-sm-min) {
+      @include display-flex;
+      @include flex-direction(row);
+      @include flex-wrap(nowrap);
+      @include align-items(stretch);
+
+      .nav-custom-tabs {
+        @include display-flex;
+        @include flex-direction(column);
+        @include flex-wrap(nowrap);
+        @include align-items(stretch);
+        @include flex-shrink(0);
+        @include justify-content(flex-start);
+        max-width: 50%;
+
+        text-align: right;
+        border-right: none;
+
+        li a {
+          display: block;
+          padding: 9px 25px 9px 25px;
+          border: 1px solid $primary;
+          background: transparent;
+
+          @media (min-width: $screen-sm-min) {
+            text-align: left;
+          }
+        }
+
+        li a:hover,
+        li.active a {
+          color: $tabs-vertical-active-color;
+          background: $tabs-vertical-active-background;
+          border-color: $tabs-vertical-active-color;
+
+          &:after {
+            background: $white;
+          }
+
+          &:before {
+            transform: translate(0);
+          }
+        }
+      }
+
+      .tab-content {
+        @include flex-grow(1);
+      }
+
+      .tab-content {
+        padding: 0 0 0 30px;
+      }
+    }
+
+    .nav-custom-tabs {
+      min-width: 100%;
+
+      @media (min-width: $screen-sm-min) {
+        min-width: 130px;
+      }
+      
+      @media (min-width: $screen-md-min) {
+        min-width: 150px;
+      }
+
+      @media (min-width: $screen-lg-min) {
+        min-width: 178px;
+      }
+    }
+    
+  }
+}
+
+.page {
+  .tabs-custom-wrap + .range {
+    margin-top: 0;
+  }
+}
+
+.tabs-services {
+  
+  .nav-custom-tabs {
+    
+    li a {
+      text-transform: none;
+      letter-spacing: 0;
+      padding-right: 35px;
+    }
+
+    .icon-arrow {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      font-size: 18px;
+      transform: translateY(-50%) rotate(-90deg);
+
+    }
+  }
+
+  &.tabs-vertical {
+    .nav-custom-tabs {
+      min-width: 100%;
+
+      @media (min-width: $screen-sm-min) {
+        min-width: 260px;
+      }
+
+      @media (min-width: $screen-md-min) {
+        min-width: 260px;
+      }
+
+      @media (min-width: $screen-lg-min) {
+        min-width: 280px;
+      }
+    }
+  }
+
+  .tel {
+    display: inline-block;
+    margin-left: 4px;
+
+    span {
+      color: $gray;
+      transition: inherit;
+    }
+
+    &:hover {
+
+      span {
+        color: $primary;
+      }
+    }
+  }
+
+  h2 {
+    @media (min-width: $screen-sm-min) {
+      font-size: 32px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      font-size: 48px;
+    }
+  }
+
+  p + .list-big { margin-top: 30px; }
+  h3 + p.big { margin-top: 28px; }
+  h3 + .list { margin-top: 8px; }
+  * + h3 { margin-top: 28px; }
+  h6 + h3 { margin-top: 0; }
+  h2 + h3 { margin-top: 22px; }
+  .range + h6.text-gray { margin-top: 30px; }
+  p.big + h6.text-bold { margin-top: 30px; }
+  h6.counter-index-item + p { margin-top: 10px; }
+  h6.text-bold + .list { margin-top: 30px; }
+
+
+  .range + h6,
+  .range + .range { margin-top: 70px; }
+
+  @media (max-width: $screen-xs-max) {
+    .unit {
+      @include display-inline-flex();
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    .range + h6,
+    .range + .range { margin-top: 90px; }
+  }
+}
+
+h2 + .tabs-custom {
+  margin-top: 30px;
+}
+
+@media (min-width: $screen-md-min) {
+  h2 + .tabs-custom {
+    margin-top: 45px;
+  }
+}

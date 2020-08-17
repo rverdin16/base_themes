@@ -1,0 +1,116 @@
+- function getImageSize(name) { return name.match('[0-9]+(x)[0-9]+')[0].split('x'); }
+
+-
+	function nameToLink(name) {
+		try { return name.replace(/\s/g, '-').toLowerCase() + '.html'; }
+		catch ( error ) {
+			throw new Error('Error in function nameToLink:\n' + error);
+		}
+	}
+
+-
+	function nameToLinAnchprk(name) {
+	try { return '#' + name.replace(/\s/g, '-').toLowerCase(); }
+	catch ( error ) {
+	throw new Error('Error in function nameToLink:\n' + error);
+	}
+	}
+
+mixin breadcrumbs(obj)
+	- var activeItemName= obj.path.pop()[0];
+	// Breadcrumbs
+	section.breadcrumbs-custom.text-left(class= obj.breadcrumbsClass style='background-image: url(images/' +( obj.bgImage ? obj.bgImage : 'bg-image-1') + '.jpg);')
+		.shell
+			h2.breadcrumbs-custom__title=obj.title ? obj.title : activeItemName
+
+			ul.breadcrumbs-custom__path
+				li: a(href='index.html')=menu[0].title
+
+				- for (var i = 0; i < obj.path.length; i++)
+					- if (obj.path[i][0] == activeItemName) break;
+					- var pathLink = obj.path[i][1] ? obj.path[i][1] : nameToLink(obj.path[i][0])
+					li: a(href=pathLink)=obj.path[i][0]
+
+				li.active=activeItemName
+	='\n'
+
+mixin page-title(obj)
+	// Page title
+	section.section.section-md.bg-white.text-center
+		.shell
+			.range.range-50.range-sm-center
+				.cell-sm-9.cell-md-8.cell-lg-6
+					h3=obj.title
+					p.big=obj.text
+
+			block
+	='\n'
+
+//- Table
+mixin table(classes, modClasses)
+	.table-custom-responsive(class=modClasses)
+		table.table-custom(class=classes)
+			thead
+				tr
+					th Column 1
+					th Column 2
+					th Column 3
+					th Column 4
+
+			tbody
+				tr
+					td Item #1
+					td Description
+					td Subtotal
+					td $1.00
+				tr
+					td Item #2
+					td Description
+					td Discount
+					td $2.00
+				tr
+					td Item #3
+					td Description
+					td Subtotal
+					td $3.00
+
+				tr
+					td Item #4
+					td Description
+					td Tax
+					td $4.00
+
+			tfoot
+				tr
+					td All Items
+					td Description
+					td Your Total
+					td $10.00
+
+//- Img image
+mixin img(name, className)
+	- var size = getImageSize(name);
+
+	img(src='images/' + name, alt='', width=size[0], height=size[1], class=className)
+
+
+//- Jpg image
+mixin jpg(name, className)
+	- var size = getImageSize(name);
+	img(src='images/' + name + '.jpg', alt='', width=size[0], height=size[1], class=className)
+
+
+//- Png image
+mixin png(name, className)
+	- var size = getImageSize(name);
+	img(src='images/' + name + '.png', alt='', width=size[0], height=size[1], class=className)
+
+mixin thumbnail-small(obj)
+	a.thumbnail-small(href=obj.link)
+		.thumbnail-small-image
+			img(src='images/layout-panel/' + obj.filename + '.jpg', alt='', width='380', height='280')
+		.thumbnail-small-hover-image
+			img(src='images/layout-panel/' + obj.filename + '.jpg', alt='', width='380', height='280')
+
+		.thumbnail-small-caption
+			p.thumbnail-small-header=obj.title

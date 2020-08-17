@@ -1,0 +1,18 @@
+// RD Mailform
+form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='forms', method='post', action='bat/rd-mailform.php')
+  .range.range-spacing-10.range-10
+    .cell-sm-6
+      .form-wrap
+        label.form-label(for="form-login-name-2") Username
+        input#form-login-name-2.form-input(type="text" name="name" data-constraints='@Required')
+    .cell-sm-6
+      .form-wrap
+        label.form-label(for="form-email") Email
+        input#form-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+    .cell-sm-12
+      .form-wrap
+        label.form-label(for="form-message") Message
+        textarea#form-message.form-input(name="message" data-constraints="@Required")
+    .cell-sm-12.text-right
+      button(type="submit").button.button-primary Enter
+        include ../elements/_arrow-down

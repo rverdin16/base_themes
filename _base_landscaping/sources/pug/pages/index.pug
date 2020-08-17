@@ -1,0 +1,1179 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_icon-list
+include ../elements/_box-gallery
+include ../elements/_post
+include ../elements/_blockquote-2
+include ../elements/_box-team
+include ../elements/_box-services
+
+block variables
+	- var activeIndex = 0
+	- var pageClass = ''
+
+block title
+	title Real Grass
+
+block page
+	// Page Header
+	header.page-header.header-classic
+		// RD Navbar
+		.rd-navbar-wrap
+			nav.rd-navbar(data-layout='rd-navbar-fixed',
+			data-sm-layout='rd-navbar-fixed',
+			data-md-layout='rd-navbar-fixed',
+			data-md-device-layout='rd-navbar-fixed',
+			data-lg-layout='rd-navbar-fullwidth',
+			data-lg-device-layout="rd-navbar-fullwidth",
+			data-md-stick-up-offset="73px",
+			data-lg-stick-up-offset="93px"
+			data-stick-up='true'
+			data-sm-stick-up='true'
+			data-md-stick-up='true'
+			data-lg-stick-up='true')
+				.rd-navbar-collapse-toggle(data-rd-navbar-toggle='.rd-navbar-collapse'): span
+
+				.rd-navbar-aside-outer
+					.rd-navbar-panel
+						// RD Navbar Toggle
+						button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+							span
+						// RD Navbar Brand
+						.rd-navbar-brand
+							a.brand-name(href='index.html')
+								+png('logo-white-261x45', "desktop-element")
+								+png('logo-dark-261x45', "mobile-element")
+
+					.rd-navbar-aside.rd-navbar-collapse
+						address.contact-info
+							ul.list-address
+								li
+									.unit.unit-middle.unit-spacing-icon.unit-horizontal
+										.unit__left
+											span.icon.icon-md.icon-primary-dark.fa-phone
+										.unit__body.list-tel
+											.p.tel
+												a(href='tel:#') 1 (800) 123 1234
+											.p.tel
+												a(href='tel:#') 1 (800) 123 1235
+
+								li
+									.unit.unit-middle.unit-spacing-icon.unit-horizontal
+										.unit__left
+											span.icon.icon-md.icon-primary-dark.fa-home
+										.unit__body
+											a.text-middle.address(href='#') 227 Marion Street,
+												br
+												| Columbia, SC 29201
+
+								li
+									.unit.unit-middle.unit-spacing-icon.unit-horizontal
+										.unit__left
+											span.icon.icon-md.icon-primary-dark.fa-clock-o
+										.unit__body
+											.p Mon - Sat 8.00 - 18.00
+											.p Sunday CLOSED
+
+							+widget-list([
+								{
+									"icon": "fa fa-facebook",
+									"href": "#"
+								},
+								{
+									"icon": "fa fa-google-plus",
+									"href": "#"
+								},
+								{
+									"icon": "fa fa-linkedin",
+									"href": "#"
+
+								},
+								{
+									"icon": "fa fa-twitter",
+									"href": "#"
+								}
+							], 'text-white', 'mobile-element')
+
+				.rd-navbar-inner
+					// RD Navbar Panel
+
+					.rd-navbar-aside-wrap
+
+						.rd-navbar-nav-wrap
+							+nav()
+
+						+widget-list([
+							{
+								"icon": "fa fa-facebook",
+								"href": "#"
+							},
+							{
+								"icon": "fa fa-google-plus",
+								"href": "#"
+							},
+							{
+								"icon": "fa fa-linkedin",
+								"href": "#"
+
+							},
+							{
+								"icon": "fa fa-twitter",
+								"href": "#"
+							}
+						], 'text-white', 'desktop-element')
+
+
+	section.swiper-classic.swiper-custom-container.swiper-custom-nav#home(data-type='anchor')
+		// Swiper
+		.swiper-container.swiper-slider.swiper-bg.swiper-scale-effect(data-loop='true' data-autoplay='4000' data-slide-effect="fade" data-simulate-touch="false")
+			.swiper-wrapper
+				.swiper-slide(data-slide-bg='images/swiper1-slide1-1920x764.jpg')
+					.swiper-slide-cover(style="background: url(images/swiper1-slide1-1920x764.jpg) center; background-size: cover;")
+				.swiper-slide(data-slide-bg='images/swiper1-slide2-1920x764.jpg')
+					.swiper-slide-cover(style="background: url(images/swiper1-slide2-1920x764.jpg) center; background-size: cover;")
+				.swiper-slide(data-slide-bg='images/swiper1-slide3-1920x764.jpg')
+					.swiper-slide-cover(style="background: url(images/swiper1-slide3-1920x764.jpg) center; background-size: cover;")
+
+		.swiper-bg-content
+			.swiper-slide-caption
+				.swiper-slide-content
+					.shell
+						.range
+							.cell-xs-12
+								h6 We create a pleasant & cheerful ambience
+								h2
+									span.icon.icon-xmd.fl-great-icon-set-mobile226
+									a(href='tel:#') +1 (800) 123 1264
+								.group-xs
+									a(href="#").button.button-md.button-primary Get free quote
+										include ../elements/_arrow-down
+									a(href="#").button.button-md.button-primary-dark Our services
+										include ../elements/_arrow-down
+
+		.shell.box-nav.box-nav-small.box-nav__classic
+			include ../elements/_swiper-box-nav
+
+	section.section-md.bg-white#about(data-type='anchor')
+		.shell
+			h2 About Us
+			.range.range-50.range-xs
+				.cell-lg-7.cell-md-6
+					p.big.text-width-580 Our team is hardworking and dedicated to ensuring your yard in Brisbane, the Gold Coast and the Sunshine Coast, looks the very best.
+					p.text-width-650 When individuals and businesses in Brisbane, the Gold Coast and the Sunshine Coast need a mowing and garden maintenance service, they call on the company they can trust. Here at Real Grass we’re sure to provide an excellent result every time. This is why we have such an impressive client list throughout all areas of Brisbane, the Gold Coast and the Sunshine Coast.
+
+					article.post-video.post-video-var-1
+						.post-video__body
+							figure.post-video__image
+								+jpg('about-1-570x331')
+
+							a.post-video__control(data-lightbox='iframe', href='https://www.youtube.com/watch?v=pNj4BDp4QYE')
+
+				.cell-lg-5.cell-md-6
+					.range.range-30
+						.cell-md-12.range-xs-center.range-lg-left
+							+icon({
+								unitClass: 'unit-spacing-icon unit-xs-horizontal text-xs-left',
+								titleClass: 'heading-3',
+								classIcon: 'icon-gray-dark icon-xmd fl-great-icon-set-ice78',
+								title: 'What to expect',
+								content: 'When you call on Real Grass’s Mowing Service, you can expect to receive the very best in workmanship and expert knowledge.You can rely on us to always show up on time, as we know how frustrating it is to wait around all day for a tradesman.'
+							})
+						.cell-md-12
+							+icon({
+								unitClass: 'unit-spacing-icon unit-xs-horizontal text-xs-left',
+								titleClass: 'heading-3',
+								classIcon: 'icon-gray-dark icon-xmd fl-great-icon-set-user156',
+								title: 'Our team',
+								content: 'The team at Real Grass is made up of skilled Head Office staff, as well as our qualified servicemen, the best in the field.Each team member is fully trained and is dedicated to the Real Grass’s mowing service’s ethical business system.'
+							})
+						.cell-md-12
+							+icon({
+								unitClass: 'unit-spacing-icon unit-xs-horizontal text-xs-left',
+								titleClass: 'heading-3',
+								classIcon: 'icon-gray-dark icon-xmd fl-great-icon-set-crosshair15',
+								title: 'Our aim'
+							})
+
+								ul.list.list-marked.list-family-base
+									li Provide a high standard of presentation and quality of service
+									li Be reliable and responsive to customer needs
+									li Provide affordable and competitive service rates
+									li Exceed customer expectations in workmanship
+
+						.cell-md-12
+							.inset-left-sm-50
+								a(href="#").button.button-primary Meet our team
+									include ../elements/_arrow-down
+
+	section.section-md.bg-gray-3.bg-about-1.text-center#testimonials(data-type='anchor')
+		.shell
+			h2 Testimonials
+			.owl-carousel.owl-classic.owl-nav-default(data-items='1',
+			data-sm-items="2",
+			data-md-items="3"
+			data-stage-padding='0',
+			data-dots-each='1'
+			data-loop='true',
+			data-margin='30',
+			data-dots='true')
+				.owl-item
+					+blockquote-2({
+						classUnit: 'unit-vertical',
+						pathFile: 'team-1-370x265',
+						classImg: 'box-shadow-var-1',
+						classWrap: 'quote-classic',
+						content: 'I love Real Grass. My yard has never looked so good! I don t have to mess with it at all, except to plant flowers and do my gardening (which I love), this company keeps it looking perfect. I am glad to recommend their team of lawn care experts.',
+						autorName: 'Ann Carter',
+						statusAutor: '(housewife)'
+					})
+
+				.owl-item
+					+blockquote-2({
+						classUnit: 'unit-vertical',
+						pathFile: 'team-2-370x265',
+						classImg: 'box-shadow-var-1',
+						classWrap: 'quote-classic',
+						content: 'Our lawn has never looked better with the Spring aeration and weed and feed services. Next door neighbor walked over and asked who we used because our lawn always looks so good. I was happy to refer them.',
+						autorName: 'Peter Smith',
+						statusAutor: '(manager)'
+					})
+
+				.owl-item
+					+blockquote-2({
+						classUnit: 'unit-vertical',
+						pathFile: 'team-3-370x265',
+						classImg: 'box-shadow-var-1',
+						classWrap: 'quote-classic',
+						content: 'We recently moved to our new house. We needed a lawn service and Real Grass responded quickly and professionally. They do a great job and are very reliable. Additionally, they have excellent customer service.',
+						autorName: 'Sam McMillan',
+						statusAutor: '(artist)'
+					})
+
+			a(href="#").button.button-primary More testimonials
+				include ../elements/_arrow-down
+
+	section.section-lg.parallax-container(data-parallax-img='images/parallax-4-1920x1100.jpg')
+		.parallax-content#careers(data-type='anchor')
+			.shell
+				h2 Careers
+				.range.range-50
+					.cell-lg-7.cell-md-6
+						p.big.text-width-large You will be applying fertilizer and weed control to lawns weekly on a 1 man crew making great money. Each truck/crew is treated like your own mini business. It’s hard work, but very rewarding. We pay you based on the number of lawns you mow so it’s very fair and the harder you work the more you make.
+						p.text-bold.text-width-large We reward our awesome staff with bonuses, lunch cards, free breakfasts, and even BBQs on Fridays! We work hard and play hard! So thanks for your time and we wish you the best, whether it’s with us or another company.
+
+						a(href="#").button.button-primary.hidden.reveal-md-inline-block Join our team
+							include ../elements/_arrow-down
+
+					.cell-lg-5.cell-md-6.text-left
+						p.big.text-bold.text-xlg-nowrap To be considered for the lawn technician position, you must:
+						ul.list.list-index.list-bold
+							li
+								span.list-index-counter
+								| Have some experience in lawn care, or working outdoors.
+							li
+								span.list-index-counter
+								| Understand the importance of keeping our customers happy.
+							li
+								span.list-index-counter
+								| Have a valid driver’s license and be able to legally work.
+							li
+								span.list-index-counter
+								| Be prepared to work long days – Monday through Friday.
+							li
+								span.list-index-counter
+								| Be someone who wants and needs money.
+							li
+								span.list-index-counter
+								| Have a working cell phone to bring with you every day.
+
+				a(href="#").button.button-primary.veil-md Join our team
+					include ../elements/_arrow-down
+
+
+	section.section-lg.bg-gray-3.section-relative.index-2
+		.shell
+			.range.range-50.range-center
+
+				.cell-md-7
+					h3.text-width-small Industry-leading Expertise & Consistent Customer Satisfaction
+					p.offset-top-28 Real Grass is an industry-leading landscaping, lawn care, and snow removal company. We have established a proven system that allows us to provide exceptional grounds care services and customized lawn solutions to both commercial and residential clients. Our business model is built on a culture of care and we are dedicated to complete customer satisfaction. We are focused on delivering quality results that exceed your expectations!
+					.range.range-30.range-center.range-lg-left
+						.cell-lg-5.cell-sm-6.cell-xs-10.wow.fadeInUp(data-wow-delay=".1s")
+							+icon({
+								unitClass: 'unit-spacing-icon unit-sm-horizontal',
+								titleClass: 'heading-6 text-primary',
+								classIcon: 'icon-primary icon-sm fl-great-icon-set-alarm49',
+								title: 'Anywhere, Anytime',
+								content: 'Real Grass Mowing comes to you at your premises be it a home or business.'
+							})
+
+						.cell-sm-6.cell-xs-10.wow.fadeInUp(data-wow-delay=".2s")
+							+icon({
+								unitClass: 'unit-spacing-icon unit-sm-horizontal',
+								titleClass: 'heading-6 text-primary',
+								classIcon: 'icon-primary icon-sm fl-great-icon-set-credit95',
+								title: 'Value For Money',
+								content: 'Our goal is to always provide a value for money service which appeals to people from all walks of life.'
+							})
+
+						.cell-lg-5.cell-sm-6.cell-xs-10.wow.fadeInUp(data-wow-delay=".3s")
+							+icon({
+								unitClass: 'unit-spacing-icon unit-sm-horizontal',
+								titleClass: 'heading-6 text-primary',
+								classIcon: 'icon-primary icon-sm fl-great-icon-set-favorites5',
+								title: 'Excellent Service',
+								content: 'We provide our clients with service of exceptional quality to satisfy their lawn care needs.'
+							})
+
+						.cell-sm-6.cell-xs-10.wow.fadeInUp(data-wow-delay=".4s")
+							+icon({
+								unitClass: 'unit-spacing-icon unit-sm-horizontal',
+								titleClass: 'heading-6 text-primary',
+								classIcon: 'icon-primary icon-sm fl-great-icon-set-like77',
+								title: '100% Satisfaction Guaranteed!',
+								content: 'If for any reason you are disappointed with our service, we will quickly re - perform the service to your liking.'
+							})
+
+				.cell-md-5.wow.fadeInUp(data-wow-delay=".1s")
+					.offset-negative-lg-top-154
+						.form-request.form-request-inset.box-shadow-var-2
+							h4 Request an estimate
+							// RD Mailform
+							form.rd-mailform.text-left(data-form-output="form-output-global",
+							data-form-type='forms', method='post', action='bat/rd-mailform.php')
+
+								.form-wrap
+									label.form-label(for="form-login-name-3") Your name
+									input#form-login-name-3.form-input(type="text" name="name" data-constraints='@Required')
+
+								.form-wrap
+									label.form-label(for="form-email-2") Your email
+									input#form-email-2.form-input(type="email" name="email" data-constraints="@Email @Required")
+
+								.form-wrap
+									//Select 2
+									select.form-control.select-filter(data-minimum-results-for-search="Infinity", data-constraints="@Required")
+										option(value="1") Landscape maintenance
+										option(value="2") Garden Maintenance
+										option(value="3") Lawn Mowing
+										option(value="4") Outdoor Lighting
+										option(value="5") Ice Removal
+								.form-wrap
+									label.form-label(for="form-message-2") Message
+									textarea#form-message-2.form-input(name="message" data-constraints="@Required")
+
+								.form-wrap.text-right
+									button(type="submit").button.button-primary Request a quote
+										include ../elements/_arrow-down
+
+	section.section-md.bg-white.section-relative.index-3
+		.shell
+			.range.range-50.range-center
+				.cell-lg-7.cell-md-6.cell-sm-10
+					.offset-negative-lg-top-140
+						.box-project.box-project__classic.context-dark
+							.box-project-overlay
+								+jpg('home-2-670x549')
+
+							.box-project-body
+								h4 Featured Project
+								a(href="#").button.button-custom.button-md.button-primary.arrow-bottom
+									| Columbus Waterfront Park
+									span.text-small Boston, MA
+									include ../elements/_arrow-down
+
+
+				.cell-lg-5.cell-md-6.cell-sm-10
+					ul.list.list-letters.inset-left-lg-45
+						li.wow.fadeInRight(data-wow-delay=".1s")
+							span.list-index-counter
+							span.list-letters-content
+								span.heading-5 Lawn Care
+								span.p.big We provide specialist care such as mulch mowing, fertilizing, and weed control.
+						li.wow.fadeInRight(data-wow-delay=".2s")
+							span.list-index-counter
+							span.list-letters-content
+								span.heading-5 Garden Maintenance
+								span.p.big When you are in need of expert garden maintenance, we  will handle all outdoor chores.
+						li.wow.fadeInRight(data-wow-delay=".3s")
+							span.list-index-counter
+							span.list-letters-content
+								span.heading-5 Pest, Weed & Fertilization
+								span.p.big Lawns require proper pest prevention, weed control, and fertilization that we provide!
+
+	section.section-md.bg-white
+		.shell
+			.range.range-30.range-sm-50.range-center
+				// Counters
+				.cell-xs-6.cell-md-5.cell-lg-3
+					.box-counter.box-counter-classic
+						.counter(data-speed='1000') 987
+						p.box-counter-title Residential projects
+
+				.cell-xs-6.cell-md-5.cell-lg-3
+					.box-counter.box-counter-classic
+						.counter(data-speed='1000') 15
+						p.box-counter-title Years in business
+
+				.cell-xs-6.cell-md-5.cell-lg-3
+					.box-counter.box-counter-classic
+						.counter(data-speed='1000') 632
+						p.box-counter-title Commercial objects
+				.cell-xs-6.cell-md-5.cell-lg-3
+					.box-counter.box-counter-classic
+						.counter(data-speed='1000') 374
+						p.box-counter-title Acres maintained
+	='\n'
+
+	section.section-md.parallax-container(data-parallax-img='images/parallax-5-1920x1100.jpg')
+		.parallax-content
+			.shell
+				h2 Our vision
+				.range.range-50
+					.cell-lg-7.cell-sm-6
+						p.big Real Grass is an expert team of staff & servicemen headed by Andrew Wagstaff. The vision of the company is to produce growth and expansion through quality business practices, selective pursuit of suitable franchisees and outstanding performance in the field of domestic and commercial ground maintenance.
+						a(href="#").button.button-primary Contact us
+							include ../elements/_arrow-down
+
+					.cell-lg-5.cell-sm-6
+						ul.list.list-index.list-index-big.list-bold
+							li
+								span.list-index-counter
+								| Business transactions and internal systems are based on sound ethical principles providing a win/win outcome in all situations.
+							li
+								span.list-index-counter
+								| The company’s policy on franchisee recruitment encompasses a determination to select franchisees based on the relevant selection criteria.
+							li
+								span.list-index-counter
+								| Our team shows pride of presentation, a conscientious attitude and a desire to fulfill customer needs in any work they undertake.
+
+
+
+	section.section-md.bg-gray-3#team(data-type='anchor')
+		.shell
+			.range.range-30.range-center
+				.cell-lg-12.cell-md-10
+					h2 Our Head Office Team
+				.cell-lg-6.cell-md-10.cell-sm-6.cell-xs-10
+					+box-team-horizontal({
+						boxClass: 'unit-md-horizontal',
+						teamPosition: 'Owner and Founder',
+						teamName: 'Andrew Wagstaff',
+						teamImg: 'team-9-270x218',
+						postContent: 'Our owner & founder, Andrew Wagstaff started the company when he was 21 years old. His passion for incredible customer service and a fair price combined with decades of experience make for an incredible combination.'
+					})
+
+				.cell-lg-6.cell-md-10.cell-sm-6.cell-xs-10
+					+box-team-horizontal({
+						boxClass: 'unit-md-horizontal',
+						teamPosition: 'Operations & Compliance Manager',
+						teamName: 'John Nesh',
+						teamImg: 'team-10-270x218',
+						postContent: 'John has worked in lawn and garden care for over 30 years, including 12 years with the world’s largest garden care products company. He has traveled throughout the UK and USA developing a network of suppliers to bring the latest and best products and practices to your garden. No work is too big or small for him.'
+					})
+
+
+				.cell-lg-6.cell-md-10.cell-sm-6.cell-xs-10
+					+box-team-horizontal({
+						boxClass: 'unit-md-horizontal',
+						teamPosition: 'Lawn Treatments/Office Admin ',
+						teamName: 'Alicia Hagen',
+						teamImg: 'team-11-270x218',
+						postContent: 'Alicia Hagen has joined the Real Grass team in August 2013. She is a lawn fanatic, having being involved in lawn treatments industry since 2005. She is enjoying having that little extra time to do the right treatments to your lawn.'
+					})
+
+				.cell-lg-6.cell-md-10.cell-sm-6.cell-xs-10
+					+box-team-horizontal({
+						boxClass: 'unit-md-horizontal',
+						teamPosition: 'Franchise Manager',
+						teamName: 'Sara Parker',
+						teamImg: 'team-12-270x218',
+						postContent: 'Sara is our local franchise manager who can visit your premises to discuss your lawn mowing needs and to bridge the gap between franchisees and yourself ensuring that the work carried out by our team is of the highest standard. If you are not completely happy with the result, then give us a call and we will get this fixed at no cost to you in a prompt manner.'
+					})
+
+
+	section.section-md.bg-white.text-left#services(data-type='anchor')
+		.shell
+			h2 Services
+			// Bootstrap tabs
+			#tabs-3.tabs-custom.tabs-services.tabs-vertical
+				// Nav tabs
+				ul.nav-custom.nav-custom-tabs.group-tabs
+					li.active: a(href='#tabs-3-1' data-toggle='tab') Lawn & Bed Maintenance
+						include ../elements/_arrow-down
+					li: a(href='#tabs-3-2' data-toggle='tab') Landscape / Hardscape
+						include ../elements/_arrow-down
+					li: a(href='#tabs-3-3' data-toggle='tab') Pest, Weed, & Fertilization
+						include ../elements/_arrow-down
+					li: a(href='#tabs-3-4' data-toggle='tab') Outdoor Lighting
+						include ../elements/_arrow-down
+					li: a(href='#tabs-3-5' data-toggle='tab') Snow & Ice Removal
+						include ../elements/_arrow-down
+					li: a(href='#tabs-3-6' data-toggle='tab') Irrigation
+						include ../elements/_arrow-down
+
+				//- Tab panes
+				.tab-content.text-left
+					div#tabs-3-1.tab-pane.fade.in.active.counter-index-sec
+						.inset-right-lg-150
+							h2 Lawn & Bed Maintenance
+							p.big.text-width-large The Real Grass offers different programs for our ground care maintenance services, including:
+							h3.counter-index-item
+								span.counter-wrap
+								| Organic Lawn Care
+
+							p Organic fertilizer helps offset the disadvantages of traditional fertilizer by increasing diversity in the soil, creating a healthier, stronger lawn. It does this because organic fertilizer is made from natural plant, animal, and mineral sources. As a result, it provides long-term value.
+							ul.list.list-marked.list-gray-dark.list-bold
+								li Better drainage
+								li Minimizes erosion
+								li Requires less mowing
+								li Safer for people and animals
+								li Creates long-lasting soil health
+								li Soil builds immunity to pests and diseases
+
+							h3.counter-index-item
+								span.counter-wrap
+								| Hybrid Lawn Care
+
+							p Our hybrid lawn care program provides the environmental benefits of organic fertilizer with the weed-killing capability of traditional fertilizer. It is both cost-effective in the short and long run.
+							ul.list.list-marked.list-gray-dark.list-bold
+								li Safe for people and animals
+								li Helps promote long-term soil health
+								li Makes lawn more resilient to drought
+								li Creates a few of soil microorganisms
+								li Requires less frequent mowing and upkeep
+								li Traditional fertilizer will help stop weed growth
+
+							h3.counter-index-item
+								span.counter-wrap
+								| Traditional Lawn Care
+
+							p Traditional lawn care has the fast results and short-term appearance improvement you need. While organic fertilizers release nutrients slowly over time, traditional lawn care provides quick-release soil nutrients at a more affordable price. However, traditional lawn care may require more soil upkeep.
+							ul.list.list-marked.list-gray-dark.list-bold
+								li More affordable
+								li Typically delivers faster results
+								li Depletes micro-organisms in the soil
+								li Requires moderation, or soil will be damaged
+								li Not as safe for people and animals
+
+						.range.range-30
+							.cell-lg-4.cell-md-5.text-center.text-sm-left
+								a(href="#").button.button-primary Book this service
+									include ../elements/_arrow-down
+
+							.cell-lg-4.cell-md-5.text-center.text-sm-left
+								.unit.unit-middle.unit-spacing-icon-3.unit-horizontal
+									.unit__left
+										span.icon-gray-dark.icon-54.fl-great-icon-set-mobile226
+
+									.unit__body
+										h6 Have any questions?
+										h3: a(href='tel:#').tel
+											| 1
+											=' '
+											span (800)
+											=' '
+											| 123 1234
+
+
+					div#tabs-3-2.tab-pane.fade
+						h2.text-width-800 Landscape / Hardscape Services for Commercial Locations
+						h3 Year-Round Beauty for Schools, Hospitals, Banks, & More!
+						p.big Any experienced business owner can explain the value of curb appeal. How your commercial space looks can make or break a business. While we have all seen poor landscaping before, few of us realize the power of a beautiful, vibrant, and rich landscape design until we enjoy one personally. That is the service that we offer to commercial clients throughout the country—a lush, attractive landscape that can be a source of pride for any business manager.
+
+						h3 Hardscape for Commercial Properties
+						p.big Hardscaping, put simply, is the use of stones or inorganic materials in a landscape design. For example, a granite-step walkway would be an example of a hardscape element. Hardscaping is unique from landscaping in that it is not growing or seasonal, but it is still a vital part of a healthy landscape. Hardscaping adds a powerful new dimension to any landscape design. Our knowledgeable stonemasons work with our landscape design specialists to provide diverse forms of lawn care splendor.
+
+						.range.range-30
+							.cell-md-6
+								p More examples of effective hardscaping include:
+								ul.list.list-marked.list-gray-dark.list-big.list-bold
+									li Stone pathways
+									li Walls
+									li Patios
+									li Staircases
+									li Stone slabs
+									li Stepping stones
+									li Permeable pavers
+									li Reinforced turf
+
+							.cell-md-6
+								p In contrast, softscape is made of all the organic parts of a landscape, which includes:
+								ul.list.list-marked.list-gray-dark.list-big.list-bold
+									li Garden beds
+									li Shrubs
+									li Flowers
+									li Trees
+									li Grass
+									li Soil/turf
+
+							.cell-lg-4.cell-md-5.text-center.text-sm-left
+								a(href="#").button.button-primary Book this service
+									include ../elements/_arrow-down
+
+							.cell-lg-4.cell-md-5.text-center.text-sm-left
+								.unit.unit-middle.unit-spacing-icon-3.unit-horizontal
+									.unit__left
+										span.icon-gray-dark.icon-54.fl-great-icon-set-mobile226
+
+									.unit__body
+										h6 Have any questions?
+										h3: a(href='tel:#').tel
+											| 1
+											=' '
+											span (800)
+											=' '
+											| 123 1234
+
+					div#tabs-3-3.tab-pane.fade.counter-index-sec
+						h2 Commercial Pest, Weed & Fertilization
+						p.big Maintaining beauty on a commercial property year-round requires a level of detail and expertise that requires a professional’s insight. When it comes to expertise businesses can depend on, The Real Grass is the most trusted name in commercial lawn care and landscaping services. We provide for commercial properties throughout Canada, including schools, hospitals, and shopping centres.
+						.range.range-30
+							.cell-md-6
+								h3.counter-index-item
+									span.counter-wrap
+									| Organic Lawn Care
+								ul.list.list-marked.list-bold
+									li Creates efficient soil drainage
+									li Minimizes erosion of the turf
+									li Requires less frequent upkeep
+									li Promotes growth of soil microorganisms
+									li Safer for people and animals
+									li Promotes soil resilience
+
+							.cell-md-6
+								h3.counter-index-item
+									span.counter-wrap
+									| Hybrid Lawn Care
+								ul.list.list-marked.list-bold
+									li Safe for people and animals
+									li Helps the soil stay healthier for longer
+									li Builds drought-resistant plant life
+									li Requires less frequent mowing and trimming
+									li Traditional fertilizer will help prevent weeds
+
+							.cell-md-6
+								h3.counter-index-item
+									span.counter-wrap
+									| Traditional Lawn Care
+								ul.list.list-marked.list-bold
+									li Often costs less than natural fertilizer
+									li Can deliver quicker results
+									li Is better for moderate use/growth
+									li Not as safe for people and animals
+
+						h6.text-bold Our Different Landscaping Schedule Packages
+						.range.range-30.range-xxs
+							.cell-md-6
+								p The central part of our’ values is our commitment to our clients. You come first—always. Each of our packages creates beautiful, lush landscapes that bring out the best in your business’ appearance. We prevent the growth of weeds and the annoyance of pests as well while using safe measures that result in a healthier property.
+
+							.cell-md-6
+								p Our team of landscape specialists recognizes that different properties have different needs, so we have custom maintenance packages for various clients. Our team of landscape specialists recognizes that different properties have different needs, so we have custom maintenance packages for various clients.
+
+						.range.range-30
+							.cell-lg-4.cell-md-5.text-center.text-sm-left
+								a(href="#").button.button-primary Book this service
+									include ../elements/_arrow-down
+
+							.cell-lg-4.cell-md-5.text-center.text-sm-left
+								.unit.unit-middle.unit-spacing-icon-3.unit-horizontal
+									.unit__left
+										span.icon-gray-dark.icon-54.fl-great-icon-set-mobile226
+
+									.unit__body
+										h6 Have any questions?
+										h3: a(href='tel:#').tel
+											| 1
+											=' '
+											span (800)
+											=' '
+											| 123 1234
+
+					div#tabs-3-4.tab-pane.fade
+						h2 Outdoor Lighting Services for Commercial Properties
+						.range.range-30.range-xs
+							.cell-md-6
+								p.big Outdoor lighting can impact the appearance of a property in profound ways. The right lighting can make your landscape look cohesive, clean, and attractive. Good lighting can mean the difference between an inviting location and a shoddy, dangerous-looking one.
+
+							.cell-md-6
+								p.big We provide comprehensive outdoor lighting services to businesses and companies, including banks, hotels, schools, and hospitals. Our lighting solutions are elegant and efficient, offering beautiful designs that suit your specific needs.
+
+						h6.text-bold.text-gray Comprehensive Lighting Services for All Outdoor Needs.
+						h6.text-bold.text-gray Our lighting service programs include:
+
+						.range.range-30
+							.cell-md-6
+								ul.list.list-marked.list-gray-dark.list-bold
+									li Replacing all bulbs
+									li Installing holiday lighting
+									li Handling all light timer concerns
+									li Managing all electrical connections
+
+							.cell-md-6
+								ul.list.list-marked.list-gray-dark.list-bold
+									li Installing/maintaining fixtures
+									li Adjusting lighting in landscape design
+									li Ensuring plants and lights are safely separated
+									li Repairing/burying below-ground wiring
+
+							.cell-lg-4.cell-md-5.text-center.text-sm-left
+								a(href="#").button.button-primary Book this service
+									include ../elements/_arrow-down
+
+							.cell-lg-4.cell-md-5.text-center.text-sm-left
+								.unit.unit-middle.unit-spacing-icon-3.unit-horizontal
+									.unit__left
+										span.icon-gray-dark.icon-54.fl-great-icon-set-mobile226
+
+									.unit__body
+										h6 Have any questions?
+										h3: a(href='tel:#').tel
+											| 1
+											=' '
+											span (800)
+											=' '
+											| 123 1234
+
+					div#tabs-3-5.tab-pane.fade.counter-index-sec
+						h2 Commercial Snow & Ice Removal Services
+						h3 Maintaining Your Property’s Safety & Beauty in Winter
+						p.big The winter often brings with it a whole slew of concerns. However, The Real Grass is not just devoted to your lawn care—we are devoted to maintaining your peace of mind throughout the year. That’s why we offer snow and ice management for your commercial location during rough weather.
+
+						.range.range-30
+							.cell-md-6
+								h6.text-bold.counter-index-item
+									span.counter-wrap
+									| Property Assessment
+								p Before winter has hit you hardest, our team will already be hard at work evaluating the grounds for effective cold weather preparation. We take into account any physical elements such as curbs, fire hydrants, hardscape, and more. When we return to clear away ice and snow, our team will be able to provide professional, precise, and efficient cleaning service.
+
+							.cell-md-6
+								h6.text-bold.counter-index-item
+									span.counter-wrap
+									| Tailored Calibration
+								p When our team works on your property, we measure and record all the particular needs of your land. We measure dew points, monitor asphalt temperatures, and prepare in every way for all the obstacles that winter brings. When The Real Grass prepares your property for snow and ice, you can have total peace of mind about the state of your commercial location.
+
+							.cell-md-6
+								h6.text-bold.counter-index-item
+									span.counter-wrap
+									| State-of-the-Art Equipment
+								p Our team’s equipment is cutting-edge and extremely precise. We utilize the highest-level technology to ensure that we are serving your company in the most effective way possible. Our GPS tracking equipment for each of our vehicles also ensures we arrive at your property when you need us most.
+
+							.cell-md-6
+								h6.text-bold.counter-index-item
+									span.counter-wrap
+									| Meteorological Tracking
+								p To ensure we are serving you effectively and quickly, we monitor the weather. This allows us to remain aware of when you will most require service, and how we will need to prepare your property.
+
+							.cell-lg-4.cell-md-5.text-center.text-sm-left
+								a(href="#").button.button-primary Book this service
+									include ../elements/_arrow-down
+
+							.cell-lg-4.cell-md-5.text-center.text-sm-left
+								.unit.unit-middle.unit-spacing-icon-3.unit-horizontal
+									.unit__left
+										span.icon-gray-dark.icon-54.fl-great-icon-set-mobile226
+
+									.unit__body
+										h6 Have any questions?
+										h3: a(href='tel:#').tel
+											| 1
+											=' '
+											span (800)
+											=' '
+											| 123 1234
+
+					div#tabs-3-6.tab-pane.fade
+						h2 Commercial Irrigation Services
+						h3 Ensure the Beauty and Vitality of Your Business's Landscape
+						p.big The most basic way of ensuring your lawn looks strong, healthy, and lush year-round is having an effective irrigation system. Advanced irrigation keeps your soil well-nurtured while using precious resources responsibly. We offer powerful irrigation solutions for corporate locations to enable beautiful landscape designs from world-class grounds care specialists.
+						h6.text-bold We Build Irrigation Systems for Various Companies.
+						h6.text-bold Our irrigation systems include advanced benefits, such as:
+						ul.list.list-marked.list-big.list-bold
+							li Sustainable design for long-term usage
+							li Effective water conservation
+							li Prevents excessive water runoff
+							li Drains water properly
+							li Optimized for lawn growth
+							li Custom design for every location
+							li Efficient dispensation of water
+
+						h3 Schedule an Appointment with Us Today!
+						.range.range-30.range-xxs
+							.cell-md-6
+								p Our mission is to exceed your expectations with our service—in fact, our code of values is based entirely on putting our clients first. From our first phone call with you to the cleanup process of every project, we aim to blow you away with the quality of our service.
+
+							.cell-md-6
+								p That’s why we are the most trusted name in commercial landscaping and irrigation! With 250 locations in North America, our team is never too far to bring health and vibrancy to your property.
+
+
+							.cell-lg-4.cell-md-5.text-center.text-sm-left
+								a(href="#").button.button-primary Book this service
+									include ../elements/_arrow-down
+
+							.cell-lg-4.cell-md-5.text-center.text-sm-left
+								.unit.unit-middle.unit-spacing-icon-3.unit-horizontal
+									.unit__left
+										span.icon-gray-dark.icon-54.fl-great-icon-set-mobile226
+
+									.unit__body
+										h6 Have any questions?
+										h3: a(href='tel:#').tel
+											| 1
+											=' '
+											span (800)
+											=' '
+											| 123 1234
+
+	section
+		.owl-carousel.owl-full-width.owl-services(data-items='1', data-sm-items="2",data-md-items="3", data-lg-items="4", data-xlg-items="5", data-stage-padding='0', data-loop='true', data-margin='0', data-dots='true')
+			.owl-item
+				+box-services({
+					wrapClass: 'box-services-modern',
+					itemNamber: '01.',
+					postImg: 'services-1-384x348',
+					title: 'Lawn Care',
+					content: 'From one-offs to a regular weekly, fortnightly, or monthly service, we love lawn care and you won’t find a better service anywhere. We provide specialist lawn care such as mulch mowing, fertilizing, and weed control.'
+				})
+
+			.owl-item
+				+box-services({
+					wrapClass: 'box-services-modern',
+					itemNamber: '02.',
+					postImg: 'services-2-384x348',
+					title: 'Aeration Service',
+					content: 'Our professional lawn aeration service restores your lawn’s health and vibrancy by allowing air and water to penetrate deep into the soil.Feel free to contact us.'
+				})
+
+			.owl-item
+				+box-services({
+					wrapClass: 'box-services-modern',
+					itemNamber: '03.',
+					postImg: 'services-3-384x348',
+					title: 'Overseed Lawn Service',
+					content: 'Overseeding is crucial to the health of your lawn and Real Grass’s overseeding service is unmatched in the local area.  The overseeding process thickens the lawn by placing new seed, and ultimately new grass.'
+				})
+
+			.owl-item
+				+box-services({
+					wrapClass: 'box-services-modern',
+					itemNamber: '04.',
+					postImg: 'services-4-384x348',
+					title: 'Revive – Wetting Agent',
+					content: 'Using this natural organic soil treatment combined with the Weed Wipeout and Fertilization program it will revive your lawn in mid summer when it is heat stressed and the soil temperatures are at their hottest.'
+				})
+
+			.owl-item
+				+box-services({
+					wrapClass: 'box-services-modern',
+					itemNamber: '05.',
+					postImg: 'services-5-384x348',
+					title: 'Pest Control Service',
+					content: 'Our lawn pest control department is highly trained and licensed to rid your lawn of most pests including whitefly, grubs, and chinch bugs.'
+				})
+
+	section.section-md.bg-white#gallery(data-type='anchor')
+		.shell
+			h2 Gallery
+
+			.row.isotope-wrap
+				// Isotope Filters
+				.col-lg-12
+					.isotope-filters.isotope-filters-horizontal.tabs-custom.tabs-horizontal
+						ul.nav-custom.nav-custom-tabs.group-tabs
+							li.active(data-isotope-filter='*', data-isotope-group='gallery'): a(href='#') All
+								include ../elements/_arrow-down
+							li(data-isotope-filter='Type 1', data-isotope-group='gallery'): a(href='#') Residential
+								include ../elements/_arrow-down
+							li(data-isotope-filter='Type 2', data-isotope-group='gallery'): a(href='#') Commercial
+								include ../elements/_arrow-down
+							li(data-isotope-filter='Type 3', data-isotope-group='gallery'): a(href='#') Before  and after
+								include ../elements/_arrow-down
+
+				// Isotope Content
+				.col-lg-12
+					.isotope.row.column-offset-30(data-isotope-layout='fitRows', data-isotope-group='gallery', data-lightgallery='group')
+						.col-xs-6.col-md-4.isotope-item(data-filter='Type 1')
+							+gallery({
+								img: 'gallery-grid-1-370x351',
+								imgOriginal: 'gallery-1-1195x800_original'
+							})
+
+						.col-xs-6.col-md-4.isotope-item(data-filter='Type 2')
+							+gallery({
+								img: 'gallery-grid-2-370x351',
+								imgOriginal: 'gallery-2-1067x800_original'
+							})
+
+						.col-xs-6.col-md-4.isotope-item(data-filter='Type 3')
+							+gallery({
+								img: 'gallery-grid-3-370x351',
+								imgOriginal: 'gallery-3-1200x800_original'
+							})
+
+						.col-xs-6.col-md-4.isotope-item(data-filter='Type 1')
+							+gallery({
+								img: 'gallery-grid-4-370x351',
+								imgOriginal: 'gallery-4-1200x793_original'
+							})
+
+						.col-xs-6.col-md-4.isotope-item(data-filter='Type 2')
+							+gallery({
+								img: 'gallery-grid-5-370x351',
+								imgOriginal: 'gallery-5-1200x797_original'
+							})
+
+						.col-xs-6.col-md-4.isotope-item(data-filter='Type 3')
+							+gallery({
+								img: 'gallery-grid-6-370x351',
+								imgOriginal: 'gallery-6-1200x800_original'
+							})
+
+
+	section.section-md.parallax-container.text-center#blog(data-parallax-img='images/parallax-3-1920x1100.jpg' data-type='anchor' )
+		.parallax-content
+			.shell.shell-inset-owl
+				h3 From the blog
+				.owl-carousel.owl-classic.owl-nav-default(data-items='1', data-sm-items="2", data-lg-items="3" data-stage-padding='0', data-loop='true', data-margin='30', data-dots='true', data-nav='true', data-autoplay='true')
+					.owl-item
+						+post({
+							postClass: 'post-classic',
+							numberDate: '2018-03-31',
+							postDate: 'March 31, 2018',
+							postTitle: 'Do You Love to Make People Smile?',
+							postImg: 'post-classic-1-370x159',
+							postContent: 'If you call the Real Grass office you will be greeted with a cheerful voice and a person who asks how they can make you smile today.That is our number one goal, and right now we are looking...',
+							arrowCreative: 'icon-rotate-90'
+						})
+
+					.owl-item
+						+post({
+							postClass: 'post-classic',
+							numberDate: '2018-03-20',
+							postDate: 'March 20, 2018',
+							postTitle: 'How to Mow Your Lawn',
+							postImg: 'post-classic-2-370x159',
+							postContent: 'Mowing the lawn is the one of the most fundamental steps for taking care of the lawn.If you are mowing the lawn yourself, and if you have the standard size of lawn, using a small push behind...',
+							arrowCreative: 'icon-rotate-90'
+						})
+
+					.owl-item
+						+post({
+							postClass: 'post-classic',
+							numberDate: '2018-03-15',
+							postDate: 'March 15, 2018',
+							postTitle: 'Fertilizing',
+							postImg: 'post-classic-3-370x159',
+							postContent: 'Once the season has started, one of the first steps that should be done towards getting a healthy lawn is to fertilize.The nutrients will act as an alarm clock for the roots, waking the lawn out...',
+							arrowCreative: 'icon-rotate-90'
+						})
+
+					.owl-item
+						+post({
+							postClass: 'post-classic',
+							numberDate: '2018-03-31',
+							postDate: 'March 31, 2018',
+							postTitle: 'Do You Love to Make People Smile?',
+							postImg: 'post-classic-1-370x159',
+							postContent: 'If you call the Real Grass office you will be greeted with a cheerful voice and a person who asks how they can make you smile today.That is our number one goal, and right now we are looking...',
+							arrowCreative: 'icon-rotate-90'
+						})
+
+					.owl-item
+						+post({
+							postClass: 'post-classic',
+							numberDate: '2018-03-20',
+							postDate: 'March 20, 2018',
+							postTitle: 'How to Mow Your Lawn',
+							postImg: 'post-classic-2-370x159',
+							postContent: 'Mowing the lawn is the one of the most fundamental steps for taking care of the lawn.If you are mowing the lawn yourself, and if you have the standard size of lawn, using a small push behind...',
+							arrowCreative: 'icon-rotate-90'
+						})
+
+					.owl-item
+						+post({
+							postClass: 'post-classic',
+							numberDate: '2018-03-15',
+							postDate: 'March 15, 2018',
+							postTitle: 'Fertilizing',
+							postImg: 'post-classic-3-370x159',
+							postContent: 'Once the season has started, one of the first steps that should be done towards getting a healthy lawn is to fertilize.The nutrients will act as an alarm clock for the roots, waking the lawn out...',
+							arrowCreative: 'icon-rotate-90'
+						})
+
+				a(href="#").button.button-primary-dark Visit our blog
+					include ../elements/_arrow-down
+
+	section
+		.section-partners.bg-white
+			// Owl Carousel
+			.owl-carousel.partners-carousel(data-items='2', data-xs-items="3", data-sm-items="4", data-md-items="5", data-lg-items="6", data-xlg-items="9", data-xl-items="11", data-stage-padding='15', data-loop='true', data-margin='30', data-mouse-drag="true", data-nav='true', data-dots='true', data-autoplay='true')
+				.owl-item: a(href="#"): +jpg('partners-1-146x69')
+				.owl-item: a(href="#"): +jpg('partners-2-131x70')
+				.owl-item: a(href="#"): +jpg('partners-3-163x68')
+				.owl-item: a(href="#"): +jpg('partners-4-145x80')
+				.owl-item: a(href="#"): +jpg('partners-5-123x78')
+				.owl-item: a(href="#"): +jpg('partners-6-124x90')
+				.owl-item: a(href="#"): +jpg('partners-7-134x77')
+				.owl-item: a(href="#"): +jpg('partners-8-101x77')
+				.owl-item: a(href="#"): +jpg('partners-9-129x54')
+				.owl-item: a(href="#"): +jpg('partners-10-157x76')
+				.owl-item: a(href="#"): +jpg('partners-11-137x72')
+	='\n'
+
+	section.text-center
+		.shell-fluid.shell-fluid-inset-0
+			.range.range-0.range-center.range-condensed
+				.cell-md-6
+					.box-project.box-project__creative.bg-image.bg-project-3
+						.box-project-body
+							h4 Latest project
+							a(href="#").button.button-custom.button-md.button-primary.arrow-bottom
+								| Kinderhook Retreat project
+								span.text-small New York, NY
+								include ../elements/_arrow-down
+
+
+				.cell-md-6.bg-primary
+					.section-xlg.inset-horizontal-15
+						h2 Get up to $40 off
+						h3.offset-top-0 when you refer a friend to Real Grass!
+						p.block-centered.text-width-small.offset-top-25 Each time you refer a friend or neighbor to us and they sign up for our fertilization program you and your friend will both receive $40 each. Referrals are the best compliment you can give us!
+						a(href="#").button.button-white Refer A Friend
+							include ../elements/_arrow-down
+
+	section.section-md.bg-white#contacts(data-type='anchor')
+		.shell
+			.range.range-50.range-center
+				.cell-md-6.cell-sm-10.cell-xs-12
+					h3 Addresses
+					.range.range-30.range-center.range-xxs
+						.cell-xs-6
+							address.contact-info
+								ul.list-contacts
+									li
+										a.text-middle.address(href='#') 227 Marion Street, Columbia, SC 29201
+
+									li.list-tel
+										.p.tel
+											a.text-gray.text-middle(href='tel:#') 1 (800) 123 1234
+										.p.tel
+											a.text-gray.text-middle(href='tel:#') 1 (800) 123 1235
+
+									li
+										.p Mon - Sat 8.00 - 18.00
+										.p Sunday CLOSED
+
+						.cell-xs-6
+							ul.list-contacts
+								li
+									a.text-middle.address(href='#') 2130 Fulton Street, San Diego, CA 94117-1080 USA
+
+								li.list-tel
+									.p.tel
+										a.text-gray.text-middle(href='tel:#') 1 (800) 123 1234
+									.p.tel
+										a.text-gray.text-middle(href='tel:#') 1 (800) 123 1235
+
+								li
+									.p Mon - Sat 8.00 - 18.00
+									.p Sunday CLOSED
+
+				.cell-md-6.cell-sm-10.cell-xs-12
+					h3 Get in touch
+					// RD Mailform
+					form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='forms', method='post', action='bat/rd-mailform.php')
+						.range.range-spacing-10.range-10
+							.cell-sm-6
+								.form-wrap
+									label.form-label(for="form-login-name-2") Username
+									input#form-login-name-2.form-input(type="text" name="name" data-constraints='@Required')
+							.cell-sm-6
+								.form-wrap
+									label.form-label(for="form-email") Email
+									input#form-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+							.cell-sm-12
+								.form-wrap
+									label.form-label(for="form-message") Message
+									textarea#form-message.form-input(name="message" data-constraints="@Required")
+							.cell-sm-12.text-right
+								button(type="submit").button.button-primary Enter
+									include ../elements/_arrow-down
+
+	//Please, add the data attribute data-key="YOUR_API_KEY" in order to insert your own API key for the Google map.
+	//Please note that YOUR_API_KEY should replaced with your key.
+	//Example: <div class="google-map-container" data-key="YOUR_API_KEY">
+	.google-map-container( data-center='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-styles='[{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":60}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"lightness":30}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ef8c25"},{"lightness":40}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#b6c54c"},{"lightness":40},{"saturation":-40}]},{}]' )
+		.google-map
+		ul.google-map-markers
+			li( data-location='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-description='9870 St Vincent Place, Glasgow', data-icon='images/gmap_marker.png', data-icon-active='images/gmap_marker_active.png' )
+
+	// Page Footer
+	footer.page-footer.footer-default.bg-gray-3
+		.section-md
+			.shell
+				.range.range-50.range-center
+					.cell-md-3.cell-sm-6.cell-xs-12.wow.fadeInUp(data-wow-delay=".1s")
+						h3 Residential services
+
+						ul.list.list-marked-none.visible-xs-inline-block.reveal-sm-block
+							li: a(href="#") Landscape/Hardscape
+							li: a(href="#") Landscape
+							li: a(href="#") Hardscape
+							li: a(href="#") Property Maintenance
+							li: a(href="#") Power Washing
+							li: a(href="#") Aquatic Management
+
+					.cell-md-3.cell-sm-6.cell-xs-12.wow.fadeInUp(data-wow-delay=".2s")
+						h3 Commercial services
+
+						ul.list.list-marked-none.visible-xs-inline-block.reveal-sm-block
+							li: a(href="#") Lawn & Bed Maintenance
+							li: a(href="#") Lawn Maintenance
+							li: a(href="#") Bed Maintenance
+							li: a(href="#") Turf Maintenance
+							li: a(href="#") Pruning
+							li: a(href="#") Spring Clean-Up
+
+					.cell-md-3.cell-sm-6.cell-xs-12.wow.fadeInUp(data-wow-delay=".3s")
+						h3 Contacts
+
+						address.contact-info
+							ul.list-address
+								li
+									a.text-middle.address(href='#') 227 Marion Street,
+										br
+										| Columbia, SC 29201
+
+								li.list-tel
+									.p.tel.big
+										a.text-gray.text-middle(href='tel:#') 1 (800) 123 1234
+									.p.tel.big
+										a.text-gray.text-middle(href='tel:#') 1 (800) 123 1235
+
+								li
+									.p Mon - Sat 8.00 - 18.00
+									.p Sunday CLOSED
+
+					.cell-md-3.cell-sm-6.cell-xs-10.wow.fadeInUp(data-wow-delay=".4s")
+						h3 Newsletter
+
+						form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='forms', method='post', action='bat/rd-mailform.php')
+							.form-wrap
+								label.form-label(for="inline-email-1") Enter your email here
+								input#inline-email-1.form-input(type="email" name="email" data-constraints="@Email @Required")
+							.form-button.text-right
+								button(type="submit").button.button-primary-sec.button-no-outline Subscribe
+									include ../elements/_arrow-right
+
+		.footer-panel
+			.shell
+				p
+					span.text-gray-dark=config.brandName
+					=' '
+					| &#169; #[span(id="copyright-year")].
+					=" "
+					| All Rights Reserved
+
+	block coder
+		// coded by gel

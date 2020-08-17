@@ -1,0 +1,244 @@
+/*
+*
+* Offsets
+* --------------------------------------------------
+*/
+
+// Element offset
+* + p { margin-top: 15px; }
+p + p { margin-top: 20px; }
+p.big + p { margin-top: 28px; }
+
+
+// Headings
+h1 + h2 { margin-top: 14px; }
+h2 + h3 { margin-top: 11px; }
+h3 + h4 { margin-top: 11px; }
+h4 + h5 { margin-top: 11px; }
+h5 + h6 { margin-top: 11px; }
+
+h2 + h6 { margin-top: 6px; }
+
+// Headings + Paragraph
+h1 + p { margin-top: 18px; }
+h2 + p { margin-top: 18px; }
+h3 + p { margin-top: 7px; }
+h4 + p { margin-top: 18px; }
+h5 + p { margin-top: 2px; }
+h6 + p { margin-top: 4px; }
+
+
+h6 + p.big { margin-top: 26px; }
+
+
+// Paragraph + Headings
+p + h2 { margin-top: 40px; }
+p + h3 { margin-top: 45px; }
+p + h4 { margin-top: 45px; }
+p + h5 { margin-top: 40px; }
+p + h6 { margin-top: 45px; }
+
+// Tags + Tags
+img + p { margin-top: 12px; }
+h2 + img { margin-top: 45px; }
+h3 + img { margin-top: 30px; }
+h3 + address { margin-top: 30px; }
+ul + ul { margin-top: 24px; }
+h2 + h2 { margin-top: 10px; }
+h5 + h5 { margin-top: 12px; }
+
+// Tags + Classes
+
+h2 + .big.text-bold { margin-top: 16px; }
+h2 + .isotope-wrap { margin-top: 30px; }
+h2 + .row { margin-top: 30px; }
+h3 + .quote { margin-top: 30px; }
+h3 + .unit { margin-top: 30px; }
+h3 + .list { margin-top: 30px; }
+h3 + .tabs-custom { margin-top: 30px; }
+h3 + .panel-custom-group { margin-top: 30px; }
+h3 + .group-lg { margin-top: 10px; }
+h3 + .range-sm { margin-top: 30px; }
+h3 + .rd-mailform { margin-top: 10px; }
+h3 + .list-marked { margin-top: 28px; }
+h3 + .isotope-wrap { margin-top: 30px; }
+h5 + .list-sec { margin-top: 4px; }
+h5 + .rd-mailform { margin-top: 20px; }
+h5 + .list-social { margin-top: 20px; }
+h6 + .button { margin-top: 14px; }
+
+p + .list { margin-top: 12px; }
+p + .list-marked { margin-top: 10px; }
+p + .offset-top-14 { margin-top: 14px; }
+p + .offset-top-22 { margin-top: 22px; }
+p + .link-wrap { margin-top: 40px; }
+p + .group-button-blog { margin-top: 10px; }
+p + .group-lg { margin-top: 25px; }
+p + .rd-mailform { margin-top: 16px; }
+p + .offset-none { margin-top: 0; }
+p + .wrap-img { margin-top: 20px; }
+p + .group-xs { margin-top: 17px; }
+h3 + .group-xs { margin-top: 10px; }
+p + .group-sm { margin-top: 12px; }
+
+p.big + .button { margin-top: 25px; }
+p.big + .button-wrap { margin-top: 20px; }
+p.big + .list { margin-top: 32px; }
+p.big + .offset-top-16 { margin-top: 16px; }
+p.big + .group-xs { margin-top: 30px; }
+.p + .range { margin-top: 20px; }
+
+// Classes
+* + .rd-mailform { margin-top: 30px; }
+* + .owl-carousel  { margin-top: 33px; }
+* + .button { margin-top: 20px; }
+* + .button-wrap { margin-top: 20px; }
+* + .box-icon-2 { margin-top: 30px; }
+* + .box-call-us { margin-top: 90px; }
+* + .contacts-gmap { margin-top: 25px; }
+* + .pagination-wrap { margin-top: 30px; }
+
+* + .offset-top-0 { margin-top: 0px; }
+* + .offset-top-2 { margin-top: 2px; }
+* + .offset-top-25 { margin-top: 25px; }
+* + .offset-top-28 { margin-top: 28px; }
+* + .offset-top-30 { margin-top: 30px; }
+
+
+// Classes + Tags
+.range + h3 { margin-top: 30px; }
+.post-meta-default + h3 { margin-top: 8px; }
+.list-sec + h5 { margin-top: 40px; }
+.list + p { margin-top: 10px; }
+.list-marked + p { margin-top: 20px; }
+.heading-6 + p { margin-top: 12px; }
+.bg-image + p { margin-top: 25px; }
+.wrap-logo + * { margin-top: 25px; }
+
+
+// Classes + Classes
+.shell + .shell { margin-top: 60px; }
+.shell + .shell-fluid { margin-top: 30px; }
+.range + .offset-top-85 { margin-top: 85px; }
+.range + .section-xlg { margin-top: 50px; }
+.shell + .offset-top-90 { margin-top: 90px; }
+.group-lg + .heading-4 { margin-top: 18px; }
+.group-xs + .group-xs { margin-top: 30px; }
+.heading-3 + .rd-mailform { margin-top: 10px; }
+.quote-creative + .quote-creative { margin-top: 50px; }
+.box-contacts + .box-contacts { margin-top: 45px; }
+.post-img + .post-classic-body { margin-top: 14px; }
+.post-classic-sec + .post-classic-sec { margin-top: 30px; }
+.post-classic-sec + .pagination-wrap { margin-top: 22px; }
+.group-xs + .group-button-blog { margin-top: 8px; }
+.owl-classic + .button { margin-top: 40px; }
+
+// Media offsets
+
+@media (min-width: $screen-sm-min) {
+  h1 + p { margin-top: 22px; }
+  h2 + p { margin-top: 22px; }
+  h4 + p { margin-top: 26px; }
+
+
+  // Tags + Classes
+  p.big + .button { margin-top: 35px; }
+
+  // Classes
+  * + .button { margin-top: 30px; }
+  * + .button-white { margin-top: 38px; }
+  * + .button-wrap { margin-top: 30px; }
+}
+
+@media (min-width: $screen-md-min) {
+
+}
+
+@media (min-width: $screen-lg-min) {
+
+}
+
+
+html {
+  // Range spacing
+
+  .range-90 {
+    @include responsive-offset(90px);
+  }
+
+  .range-60 {
+    @include responsive-offset(60px);
+  }
+
+  .range-50 {
+    @include responsive-offset(50px);
+
+    @media (min-width: $screen-md-min) {
+      > .offset-md-top-18 {
+        margin-top: 38px;
+      }
+    }
+  }
+
+  .range-40 {
+    @include responsive-offset(40px);
+  }
+
+  .range-45 {
+    @include responsive-offset(45px);
+  }
+
+  .range-30 {
+    @include responsive-offset(30px);
+  }
+
+  .range-20 {
+    @include responsive-offset(20px);
+  }
+
+  .range-15 {
+    @include responsive-offset(15px);
+  }
+
+  .range-10 {
+    @include responsive-offset(10px);
+  }
+
+  .range-0 {
+    @include responsive-offset(0px);
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .range-sm-50 {
+      @include responsive-offset-media(50px);
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    .range-md-30 {
+      @include responsive-offset-media(30px);
+    }
+
+    .range-md-90 {
+      @include responsive-offset(90px);
+    }
+  }
+
+  @media (min-width: $screen-lg-min) {
+    .range-lg-15 {
+      @include responsive-offset(15px);
+    }
+
+    .range-lg-50 {
+      @include responsive-offset-media(50px);
+    }
+  }
+}
+
+.section-typography-body {
+  p + h2 { margin-top: 90px; }
+  p + h3 { margin-top: 90px; }
+  p + h4 { margin-top: 90px; }
+  p + h5 { margin-top: 90px; }
+  p + h6 { margin-top: 90px; }
+}

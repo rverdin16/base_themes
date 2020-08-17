@@ -1,0 +1,106 @@
+/*
+*
+* Panels Custom
+* --------------------------------------------------
+*/
+
+//== Panel variables
+//
+//##
+
+$panel-title-color: $gray-dark;
+$panel-title-background: $white;
+$panel-title-padding: 12px 20px 13px 40px;
+$panel-title-sm-padding: 16px 54px 14px 54px;
+$panel-active-background: $gray-3;
+$panel-arrow: '\f107';
+$panel-arrow-font: 400 24px/24px "FontAwesome";
+$panel-body-padding: 0 20px 30px 40px;
+$panel-body-sm-padding: 0 54px 35px 54px;
+
+
+// Base Style
+// --------------------------------------------------
+
+.panel {
+  margin-bottom: 0;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+}
+
+.panel-custom-group {
+  border: 1px solid $gray-2;
+
+  .panel + .panel {
+    border-top: 1px solid $gray-2;
+  }
+}
+
+.panel-custom {
+
+
+  .panel-custom-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: $gray;
+
+    > a {
+      display: block;
+      position: relative;
+      padding: $panel-title-padding;
+      color: $panel-title-color;
+      font-family: $font-family-sec;
+      background: $panel-active-background;
+      transition: .3s all ease;
+
+      &:before {
+        content: $panel-arrow;
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        font: $panel-arrow-font;
+        color: $primary;
+        transform: translateY(-50%) rotate(-180deg);
+        transition: .3s all ease;
+      }
+
+      &.collapsed {
+        background: $panel-title-background;
+
+        &:before {
+          transform: translateY(-50%) rotate(0deg);
+        }
+      }
+
+      &:hover {
+        text-decoration: none;
+        background: $panel-active-background;
+      }
+
+      @media (min-width: $screen-sm-min) {
+        padding: $panel-title-sm-padding;
+
+        &:before {
+          left: 20px;
+        }
+      }
+    }
+  }
+
+  .panel-custom-collapse {
+    background: $panel-active-background;
+
+    .panel-custom-body {
+      padding: $panel-body-padding;
+
+      @media (min-width: $screen-sm-min) {
+        padding: $panel-body-sm-padding;
+      }
+    }
+  }
+}
+
+h3 + .panel-custom-group-wrap {
+  margin-top: 30px;
+}

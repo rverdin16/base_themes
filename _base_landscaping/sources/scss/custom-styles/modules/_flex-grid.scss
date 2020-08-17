@@ -1,0 +1,302 @@
+/*
+*
+* Flex Grid system
+* --------------------------------------------------
+*/
+
+
+
+// Base Grid Styles
+// --------------------------------------------------
+
+.shell,
+.shell-wide,
+.shell-fluid{
+  @include make-shell($cell-spacing);
+}
+
+.shell,
+.shell-wide{
+  min-width: $shell-width;
+  max-width: $shell-xs-width;
+
+  @media (min-width: $screen-sm-min) {
+    max-width: $shell-sm-width;
+  }
+
+  @media (min-width: $screen-md-min) {
+    max-width: $shell-md-width;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    max-width: $shell-lg-width;
+  }
+
+}
+
+.shell-wide {
+  @media (min-width: $screen-lg-min) {
+    max-width: $shell-xl-width;
+  }
+}
+
+.shell {
+  &.shell-fluid-inset-0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.shell-fluid {
+
+  &.shell-fluid-inset-0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.shell-inset-owl {
+
+  @media (min-width: $screen-md-min) and (max-width: 1400px) {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+}
+
+.shell-fluid-owl {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media (min-width: $screen-md-min) {
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+}
+
+
+
+@media (min-width: $screen-xlg-min) {
+
+  .shell-xlg-left {
+    margin-left: 0;
+  }
+
+  .shell-xlg-inset-0 {
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 1170px;
+  }
+
+  .shell-xlg-inset-right-56 {
+    padding-right: 56px;
+  }
+}
+
+.range-custom,
+.range {
+  @include make-range($cell-spacing);
+
+  > .range-custom {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  > .range{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &-center {
+    @include justify-content(center);
+  }
+
+  &-left {
+    @include justify-content(flex-start);
+  }
+
+  &-right {
+    @include justify-content(flex-end);
+  }
+
+  &-justify {
+    @include justify-content(space-between);
+  }
+
+  &-around {
+    @include justify-content(space-around);
+  }
+
+  &-top {
+    @include align-items(flex-start);
+  }
+
+  &-reverse {
+    @include flex-direction(row-reverse);
+  }
+
+  &-middle {
+    @include align-items(center);
+  }
+
+  &-bottom {
+    @include align-items(flex-end);
+  }
+}
+
+.range-spacer{
+  @include flex-basis(100%);
+}
+
+[class*="cell-"] {
+  @include make-cell-spacing($cell-spacing);
+}
+
+.range.range-spacing-10 {
+  margin-left: -5px;
+  margin-right: -5px;
+  [class*='cell'] {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.offset-negative-right-xl-115 {
+  @media (min-width: $screen-xlg-min) {
+    margin-right: -115px;
+  }
+}
+
+// Create IE 9 and below degradation styles
+html.lt-ie-10 * + .range,
+* + .range {
+  margin-top: $range-ws;
+}
+
+// grid 18 columns
+// --------------------------------------------------
+// Create IE 9 and below degradation styles
+html.lt-ie-10 * + .range-custom,
+* + .range-custom {
+  margin-top: $range-ws-2;
+}
+
+html.lt-ie-10 * + .range-xxs,
+* + .range-xxs {
+  margin-top: $range-ws-xxs;
+}
+
+html.lt-ie-10 * + .range-xs,
+* + .range-xs {
+  margin-top: $range-ws-xs;
+}
+
+html.lt-ie-10 * + [class*='cell-'],
+* + [class*='cell-'],
+html.lt-ie-10 * + .range-sm,
+* + .range-sm {
+  margin-top: $range-ws-sm;
+}
+
+html.lt-ie-10 * + .range-lg,
+* + .range-lg {
+  margin-top: $range-ws-lg;
+}
+
+html.lt-ie-10 .range-condensed,
+.range-condensed {
+  margin-left: 0;
+  margin-right: 0;
+
+  > [class*='cell'] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  > *  + [class*='cell'] {
+    margin-top: 0;
+  }
+}
+
+html.lt-ie-10 .range-narrow,
+.range-narrow {
+  @include make-range($cell-spacing-narrow);
+
+  > [class*='cell'] {
+    @include make-cell-spacing($cell-spacing-narrow);
+  }
+
+  > *  + [class*='cell'] {
+    @include make-cell-spacing($cell-spacing-narrow);
+  }
+}
+
+
+// Flex Grid Styles
+// --------------------------------------------------
+
+.range-custom,
+.range {
+  @include display-flex();
+  @include flex(0 1 auto);
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+
+  > .range{
+    @include flex-basis(100%);
+  }
+}
+
+.range-vertical{
+  @include flex-direction(column);
+}
+
+.range-custom > [class*='cell'],
+.range > [class*='cell'] {
+  @include flex(0 0 auto);
+  @include flex-basis(100%);
+}
+
+@each $resolution, $alias in ($screen-xs-min : xs, $screen-sm-min : sm, $screen-md-min : md, $screen-lg-min : lg, $screen-xlg-min : xlg, $screen-xl-min : xl) {
+  @media (min-width: $resolution) {
+    * + [class*='cell-#{$alias}-'] {
+      margin-top: 0;
+    }
+
+    @include make-grid-system($alias, $cell-count);
+  }
+}
+
+html.lt-ie-10 {
+  .range > {
+    @include make-fallback($cell-count);
+  }
+}
+
+// grid 18 columns
+// --------------------------------------------------
+
+@each $resolution, $alias in ($screen-xs-min : xs, $screen-sm-min : sm, $screen-md-min : md, $screen-lg-min : lg, $screen-xlg-min : xlg, $screen-xl-min : xl) {
+  @media (min-width: $resolution) {
+    * + [class*='cell-#{$alias}-'] {
+      margin-top: 0;
+    }
+
+    @include make-grid-system-2($alias, $cell-count-2);
+  }
+}
+
+html.lt-ie-10 {
+  .range-custom > {
+    @include make-fallback-2($cell-count-2);
+  }
+}
+
+
+
+// Container
+
+@media (min-width: $screen-lg-min) {
+  .container {
+    width: 1200px
+  }
+}
